@@ -1,6 +1,4 @@
 
-type Callback<T = any> = (p: T) => void
-
 export interface Config {
   method: "GET" | "POST";
   url: string;
@@ -15,7 +13,9 @@ export default function xhr(config: Config) {
 
     request.open(config.method.toUpperCase(), config.url, true);
 
-    request.timeout = config.timeout;
+    if (config?.timeout) {
+      request.timeout = config.timeout;
+    }
 
     const onloadend = () => {
       resolve(request.response);
