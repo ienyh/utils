@@ -8,7 +8,8 @@
     "index.d.ts",
     "index.ts",
     "package/",
-    "test"
+    "types/",
+    "test/"
   ],
   "scripts": {
     "test": "jest",
