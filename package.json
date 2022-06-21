@@ -1,15 +1,28 @@
 {
-  "name": "complex",
-  "version": "1.0.0",
-  "description": "",
+  "name": "@chenyh/utils",
+  "version": "0.0.1",
+  "description": "封装了开发过程中的常用代码，安装快捷使用",
   "main": "index.js",
+  "files": [
+    "dist/",
+    "index.d.ts",
+    "index.ts",
+    "package/",
+    "test"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "serve": "vite",
+    "build": "vite build"
   },
-  "keywords": [],
+  "keywords": ["utils"],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
+    "@types/jest": "^28.1.2",
+    "jest": "^28.1.1",
+    "ts-jest": "^28.0.5",
+    "typescript": "^4.7.3",
     "vite": "^2.9.12"
   }
 }
