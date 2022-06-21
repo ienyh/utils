@@ -1,8 +1,9 @@
 {
-  "name": "@chenyh/utils",
-  "version": "0.0.1",
+  "name": "@ienyh/utils",
+  "version": "0.1.0",
+  "author": "ienyh <1449101002@qq.com>",
   "description": "封装了开发过程中的常用代码，安装快捷使用",
-  "main": "index.js",
+  "main": "dist/utils.es.js",
   "files": [
     "dist/",
     "index.d.ts",
@@ -11,17 +12,27 @@
     "types/",
     "test/"
   ],
+  "exports": {
+    ".": {
+      "import": "./dist/utils.es.js",
+      "require": "./dist/utils.umd.js"
+    }
+  },
+  "type": "module",
+  "types": "./index.d.ts",
   "scripts": {
     "test": "jest",
     "serve": "vite",
     "build": "vite build"
   },
-  "keywords": ["utils"],
-  "author": "",
+  "keywords": [
+    "utils"
+  ],
   "license": "MIT",
   "devDependencies": {
     "@types/jest": "^28.1.2",
     "jest": "^28.1.1",
+    "jest-environment-jsdom": "^28.1.1",
     "ts-jest": "^28.0.5",
     "typescript": "^4.7.3",
     "vite": "^2.9.12"
