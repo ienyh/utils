@@ -6,7 +6,7 @@
 
 - `EventDispatcher` 事件发布与订阅
 - `LocalStorage` 封装原生并支持设置过期时间
-- `randomInt()` 产生随机整数
+- `randomInt` 产生随机整数
 - `thorttle` 节流
 - `debounce` 防抖
 
