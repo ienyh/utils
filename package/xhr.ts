@@ -2,7 +2,7 @@
 type RequestMethod = "GET" | "POST";
 
 export interface Config {
-  method: Uppercase<RequestMethod> & Lowercase<RequestMethod>;
+  method: Uppercase<RequestMethod>;
   url: string;
   timeout?: number;
   data?: XMLHttpRequestBodyInit | XMLDocument;
