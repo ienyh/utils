@@ -1,5 +1,6 @@
-import xhr, { XHRConfig } from './xhr';
-import delay from './delay';
+import xhr, { XHRConfig } from './xhr'
+import delay from './delay'
+import type { Fn } from './type'
 
 interface RequestInitConfig {
   baseURL: string;
