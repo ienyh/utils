@@ -1,8 +1,8 @@
 {
   "name": "@ienyh/utils",
-  "version": "0.2.5",
+  "version": "0.3.0",
   "author": "ienyh <1449101002@qq.com>",
-  "description": "封装了开发过程中的常用代码，安装快捷使用",
+  "description": "封装了开发过程中的常用代码，安装快捷使用方便",
   "main": "dist/utils.es.js",
   "module": "dist/utils.umd.js",
   "files": [
@@ -27,6 +27,7 @@
   "keywords": [
     "utils"
   ],
+  "type": "module",
   "license": "MIT",
   "devDependencies": {
     "@types/jest": "^28.1.2",

@@ -1,7 +1,7 @@
 
-type RequestMethod = "GET" | "POST";
+export type RequestMethod = "GET" | "POST";
 
-export interface Config {
+export interface XHRConfig {
   method: Uppercase<RequestMethod>;
   url: string;
   timeout?: number;
@@ -9,9 +9,10 @@ export interface Config {
   onProcess?: Callback;
 }
 
-export default function xhr(config: Config) {
+
+export default function xhr(config: XHRConfig) {
   return new Promise((resolve, reject) => {
-    const request = new XMLHttpRequest();
+    let request = new XMLHttpRequest();
 
     request.open(config.method.toUpperCase(), config.url, true);
 
@@ -24,6 +25,17 @@ export default function xhr(config: Config) {
     };
 
     request.onloadend = onloadend;
+
+    request.onerror = function handleError(err) {
+      reject(`Network Error`);
+      request = null;
+    }
+
+    request.onabort = function handleAbort() {
+      if (!request) return;
+      reject(`Request aborted`);
+      request = null;
+    };
 
     request.send(config.data);
   });
