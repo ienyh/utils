@@ -6,9 +6,11 @@
 
 - `EventDispatcher` 事件发布与订阅
 - `LocalStorage` 封装原生并支持设置过期时间
+- `Request` 封装 XMLHttpRequest，支持配置拦截器等
 - `randomInt` 产生随机整数
 - `thorttle` 节流
 - `debounce` 防抖
+- `delay` 延迟执行异步代码
 
 ## 2、安装
 
