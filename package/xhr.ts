@@ -1,3 +1,4 @@
+import type { Callback } from './type'
 
 export type RequestMethod = "GET" | "POST";
 

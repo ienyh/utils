@@ -21,7 +21,7 @@
     }
   },
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
     "serve": "vite",
     "build": "vite build"
   },
