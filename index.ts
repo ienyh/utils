@@ -7,6 +7,7 @@ import delay from './package/delay'
 import randomInt from './package/randomInt'
 import throttle from './package/throttle'
 import debounce from './package/debounce'
+import filter from './package/filter'
 
 export {
   EventDispatcher,
@@ -18,4 +19,5 @@ export {
   randomInt,
   throttle,
   debounce,
+  filter,
 }
