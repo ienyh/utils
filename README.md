@@ -11,6 +11,9 @@
 - `thorttle` 节流
 - `debounce` 防抖
 - `delay` 延迟执行异步代码
+- `filter` 过滤对象或数组
+- `isObject` 是否为对象
+- `deepClone` 深克隆对象
 
 ## 2、安装
 
