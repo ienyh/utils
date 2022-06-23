@@ -1,5 +1,6 @@
 import xhr, { XHRConfig } from './xhr'
 import delay from './delay'
+import filter from './filter'
 import type { Fn } from './type'
 
 interface RequestInitConfig {
@@ -23,12 +24,15 @@ export default class Request {
   constructor(config?: RequestInitConfig) {
     this.baseURL = config?.baseURL || '';
     this.delay = config?.delay || 0;
+    this.timeout = config?.timeout;
     this.requestInterceptor = new InterceptorManager();
     this.responseInterceptor = new InterceptorManager();
   }
 
   request(config: RequestConfig) {
     if (!config?.delay) config['delay'] = this.delay;
+    if (!config?.timeout || config?.timeout <= 0) config['timeout'] = this.timeout;
+    config.url = this.baseURL + config.url;
 
     const chain = [];
     this.requestInterceptor.forEach((interceptorHandler) => {
@@ -39,7 +43,7 @@ export default class Request {
       chain.push(interceptorHandler.resolve, interceptorHandler.reject);
     });
 
-    let promise = delay(config.delay).then(() => config);
+    let promise = delay(config.delay).then(() => filter(config, [undefined, null]));
     while (chain.length) {
       promise = promise.then(chain.shift(), chain.shift());
     }
