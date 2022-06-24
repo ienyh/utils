@@ -5,13 +5,15 @@ export interface LocalStorageValue {
   data: any;
 }
 
-const localStorage = window.localStorage;
-
 // 封装 window.localStorage 工具类，支持添加过期时间
 export default class LocalStorage {
 
   constructor() {
     throw new Error('LocalStorage is a Util Static Class, It can not be constructed!')
+  }
+
+  static isSupported() {
+    return window?.localStorage !== undefined;
   }
 
   /**
@@ -48,7 +50,7 @@ export default class LocalStorage {
     if (!temp) return null;
     const value: LocalStorageValue = JSON.parse(temp);
     if (Date.now() - value?.time >= value?.expire) {
-      // 满足条件则说明过期了
+      // 过期
       LocalStorage.remove(key);
       return null;
     }
