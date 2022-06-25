@@ -1,3 +1,4 @@
+import type { Fn } from './type'
 
 export interface LocalStorageValue {
   time: number;
@@ -14,6 +15,10 @@ export default class LocalStorage {
 
   static isSupported() {
     return window?.localStorage !== undefined;
+  }
+
+  static addEventListener(cb: Fn<StorageEvent, void>) {
+    window.addEventListener('storage', cb);
   }
 
   /**
