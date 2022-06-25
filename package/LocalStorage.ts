@@ -43,33 +43,41 @@ export default class LocalStorage {
   /**
    * 获取
    * @param key 
+   * @param needOrigin 是否直接返回原数据格式
    * @returns 
    */
-  static get = (key: string) => {
+  static get = (key: string, needOrigin = false) => {
     const temp = localStorage.getItem(key);
+    if (needOrigin) return temp;
     if (!temp) return null;
-    const value: LocalStorageValue = JSON.parse(temp);
-    if (Date.now() - value?.time >= value?.expire) {
+    const {
+      time,
+      expire,
+      data = null,
+    } = JSON.parse(temp) as LocalStorageValue;
+    if (!time || !expire) return data;
+    if (Date.now() - time >= expire) {
       // 过期
       LocalStorage.remove(key);
       return null;
     }
-    return value?.data ?? null;
+    return data;
   }
 
   /**
    * 判断 localStorage 中是否存在
    * 过期也认为不存在
+   * 如果键名不存在于存储中，localStorage.getItem 则返回 null。
    * @param key 
    * @returns 
    */
   static has = (key: string): boolean => {
-    return localStorage.getItem(key) !== undefined;
+    return localStorage.getItem(key) !== null;
   }
 
 
   /**
-   * 判断是否过期
+   * 判断是否过期 不存在时认为过期
    * @param key 
    */
   static isExpired = (key: string): boolean => {
