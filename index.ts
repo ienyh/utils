@@ -8,6 +8,7 @@ import randomInt from './package/randomInt'
 import throttle from './package/throttle'
 import debounce from './package/debounce'
 import filter from './package/filter'
+import deepClone from './package/deepClone'
 
 export {
   EventDispatcher,
@@ -20,4 +21,5 @@ export {
   throttle,
   debounce,
   filter,
+  deepClone,
 }
