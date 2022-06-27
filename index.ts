@@ -2,6 +2,7 @@ import EventDispatcher from './package/EventDispatcher'
 import LocalStorage from './package/LocalStorage'
 import MyPromise from './package/MyPromise'
 import Request from './package/Request'
+import RequestManager from './package/RequestManager'
 import xhr from './package/xhr'
 import delay from './package/delay'
 import randomInt from './package/randomInt'
@@ -15,6 +16,7 @@ export {
   LocalStorage,
   MyPromise,
   Request,
+  RequestManager,
   xhr,
   delay,
   randomInt,
