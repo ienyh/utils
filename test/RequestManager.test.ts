@@ -1,4 +1,4 @@
-import RequestManager from "../package/RequestManager";
+import RequestManager from "../src/RequestManager";
 
 describe("RequestManager", () => {
   const fetcher = async () => {

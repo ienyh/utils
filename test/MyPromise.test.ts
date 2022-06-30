@@ -1,4 +1,4 @@
-import MyPromise from '../package/MyPromise';
+import MyPromise from '../src/MyPromise';
 
 describe("MyPromise", () => {
   test("constructor", () => {

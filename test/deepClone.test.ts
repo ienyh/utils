@@ -1,4 +1,4 @@
-import deepClone from "../package/deepClone";
+import deepClone from "../src/deepClone";
 
 describe('isObject', () => {
 

@@ -1,4 +1,4 @@
-import randomInt from "../package/randomInt";
+import randomInt from "../src/randomInt";
 
 describe("randomInt", () => {
   test("setItem", () => {

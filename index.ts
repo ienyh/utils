@@ -10,6 +10,7 @@ import throttle from './package/throttle'
 import debounce from './package/debounce'
 import filter from './package/filter'
 import deepClone from './package/deepClone'
+import compose from './package/compose'
 
 export {
   EventDispatcher,
@@ -24,4 +25,5 @@ export {
   debounce,
   filter,
   deepClone,
+  compose,
 }

@@ -1,4 +1,4 @@
-import isObject from "../package/isObject";
+import isObject from "../src/isObject";
 
 describe('isObject', () => {
   test('{}', () => {

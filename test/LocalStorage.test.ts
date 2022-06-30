@@ -1,4 +1,4 @@
-import LocalStorage from "../package/LocalStorage"
+import LocalStorage from "../src/LocalStorage"
 
 describe("LocalStorage", () => {
   test("setItem", () => {

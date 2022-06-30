@@ -1,4 +1,4 @@
-import Request from "../package/Request";
+import Request from "../src/Request";
 
 describe("Request", () => {
   const o = new Request();

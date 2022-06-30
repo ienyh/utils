@@ -1,4 +1,4 @@
-import filter from "../package/filter";
+import filter from "../src/filter";
 
 describe("filter", () => {
   test("filter (array, function)", () => {

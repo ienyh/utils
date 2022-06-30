@@ -22,6 +22,9 @@ export default class RequestManager<T> extends EventDispatcher {
 
   constructor(fetcher: Fetcher<T>, config?: RequestManagerOptions) {
     super();
+    if (typeof fetcher !== 'function') {
+      throw new Error('Fetcher must be a function')
+    }
     this.fetcher = fetcher;
     this.config = { ...defaultOptions, ...config };
   }
