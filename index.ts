@@ -11,6 +11,7 @@ import debounce from './src/debounce'
 import filter from './src/filter'
 import deepClone from './src/deepClone'
 import compose from './src/compose'
+import co from './src/co'
 
 export {
   EventDispatcher,
@@ -26,4 +27,5 @@ export {
   filter,
   deepClone,
   compose,
+  co,
 }

@@ -15,6 +15,8 @@
 - `filter` 过滤对象或数组
 - `isObject` 是否为对象
 - `deepClone` 深克隆对象
+- `compose`
+- `co` 自动执行 Generator 函数
 
 ## 2、安装
 

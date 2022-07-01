@@ -4,6 +4,6 @@
  * @param delay 毫秒数
  * @returns Promise<void>
  */
-export default function delay(delay: number) {
-  return new Promise<void>(reslove => setTimeout(() => reslove(), delay >= 0 ? delay : 0));
+export default function delay<T = void>(delay: number, some?: T): Promise<T> {
+  return new Promise<T>(reslove => setTimeout(() => reslove(some), delay >= 0 ? delay : 0));
 }
