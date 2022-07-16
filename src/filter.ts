@@ -12,7 +12,7 @@ import type { Fn } from "./type";
  */
 export default function filter<T>(
   param: T,
-  handler: Fn<T extends Array<any> ? any : keyof T, boolean> | Array<any>,
+  handler: Fn<T extends Array<infer P> ? P : T[keyof T], boolean> | Array<any>,
 ) {
   if (Array.isArray(param)) {
     if (typeof handler === 'function') return param.filter(handler);
@@ -26,7 +26,7 @@ export default function filter<T>(
     let result = {};
     if (typeof handler === 'function') {
       for (const key of Object.keys(param)) {
-        if (handler(key as T extends Array<any> ? any : keyof T)) result[key] = param[key];
+        if (handler(key as T extends Array<infer P> ? P : T[keyof T])) result[key] = param[key];
       }
       return result;
     }

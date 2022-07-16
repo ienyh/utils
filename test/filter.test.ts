@@ -19,7 +19,7 @@ describe("filter", () => {
   }
   test("filter (obj, function)", () => {
     expect(
-      filter(person, p => person[p] !== undefined && person[p] !== null)
+      filter(person, p => p !== undefined && p !== null)
     ).toEqual({
       name: "zhangsan",
       gender: "male",
