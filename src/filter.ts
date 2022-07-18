@@ -26,7 +26,7 @@ export default function filter<T>(
     let result = {};
     if (typeof handler === 'function') {
       for (const key of Object.keys(param)) {
-        if (handler(key as T extends Array<infer P> ? P : T[keyof T])) result[key] = param[key];
+        if (handler(param[key])) result[key] = param[key];
       }
       return result;
     }
